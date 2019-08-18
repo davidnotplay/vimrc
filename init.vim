@@ -1,10 +1,6 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
-" Add the vimrc original.
-source ~/.vimrc
-
-
 " Italic
 set t_ZH=^[[3m
 set t_ZR=^[[23m
@@ -40,7 +36,7 @@ Plug '~/.fzf'			      " Directory where are the command fzf
 Plug 'junegunn/fzf.vim'		      " Search project files, commits, and buffers easily.
 Plug 'airblade/vim-rooter'            " Set the workpace root directory automatically.
 Plug 'craigemery/vim-autotag'         " Refresh automatically the project tag using ctags.
-Plug 'vim-vdebug/vdebug'			" Debug multilang
+Plug 'vim-vdebug/vdebug'	      " Debug multilang
 
 " THEMES
 Plug 'aradunovic/perun.vim'
@@ -52,28 +48,33 @@ Plug 'matze/vim-move'
 call plug#end()
 
 "
+" Custom commmands
+" ================
+"
+command! Vimconfig tabe /home/davidnotplay/workspace/vimrc/init.vim
+
+"
 " Custom remap
 " ============
 "
-let mapleader = " "	" Define the leader
+let mapleader = " "
+
 imap jj <Esc>
 nnoremap tt :tabclose<CR>:tabp<CR>
 nnoremap x "_x
 
-command! Vimconfig tabe /home/davidnotplay/workspace/vimrc/init.vim
-
-
-" Move between windows
+" Move between tabs and splits
 " Previous split 
 map <C-j> <C-w>w
-" Next splite
+" Next split
 map <C-k> <C-w>W        
 " Next  tab
 noremap <C-l> gt	
 " Previous tab
 noremap <C-h> gT        
 
-" buffer
+" buffer commands
+nmap gbl :ls<CR>
 nmap gbt :ls<CR>:tab sb<Space>
 nmap gbb :ls<CR>:b<Space>
 nmap gbd :ls<CR>:bd<Space>
@@ -83,7 +84,6 @@ nmap gba :ba<CR>
 nmap gbf :Buffer<CR>
 nmap gbp :bprevious<CR>
 nmap gbn :bnext<CR>
-" Save the file and delete the buffer
 
 " remap TAB key
 nnoremap <Tab> >>_
@@ -92,52 +92,51 @@ inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-" remap paths
+" Get the current file path starting from the project root
 nnoremap <leader>pp :let @+ = @%<CR>
+" Get the current absolute file path
 nnoremap <leader>pP :let @+ = expand("%:p")<CR>
+" Get the current filename
 nnoremap <leader>pf :let @+ = expand("%:t")<CR>
+" Get the directory path of the current file starting from project root.
 nnoremap <leader>pd :let @+ = expand("%:h")<CR>
+" Get the absolute directory path of the current file.
 nnoremap <leader>pD :let @+ = expand("%:p:h")<CR>
-
 
 "marks
 nnoremap gp `
 nnoremap gl '
 
-" macros
+" execute a macro
 nmap <Leader>q @
-
-" Nerdtree
-map <leader>e :NERDTreeToggle<CR>
-map <leader>ce :NERDTreeClose<CR>
 
 " Search highlight
 set hlsearch
+" hide or display the search highlight.
 nnoremap <leader><leader>h :set hlsearch!<CR>
 
-" commentary
+" transform a code line in a comment
 nmap gk gcc
 vmap gk gc
 
-"fugitive
+" show a file diff in a new tab.
 nmap <Leader>hd :tabedit %<CR>:Gdiff<CR>
 
-"gitgutter
+" Go the next git change in the file.
 nmap <Leader>hk <Plug>GitGutterPrevHunk
+" Go the previous git change in the file.
 nmap <Leader>hj <Plug>GitGutterNextHunk
 " close a window preview
 nmap <leader>hq :pclose<CR>
 
-" Tagbar
+" Show or hide the tagbar
 nnoremap <silent> <F9> :TagbarToggle<CR>
 nnoremap <silent> gt :TagbarToggle<CR>
-let g:tagbar_autofocus=1
-let g:tagbar_autoclose=1
-let g:tagbar_width=55
 
-"
-" OTHERS............
-"
+let g:tagbar_autofocus=1 "focus in tagbar when it is opened
+let g:tagbar_autoclose=1 " Close tagbar when an element is selected.
+let g:tagbar_width=55    " Tagbar width
+
 :set number " set the number lines
 :set numberwidth=4
 :set mouse=a " enable mouse. Need more info.
