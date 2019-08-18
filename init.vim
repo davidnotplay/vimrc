@@ -60,7 +60,8 @@ imap jj <Esc>
 nnoremap tt :tabclose<CR>:tabp<CR>
 nnoremap x "_x
 
-command! Vimconfig tabe /home/davidnotplay/.config/nvim/init.vim
+command! Vimconfig tabe /home/davidnotplay/workspace/vimrc/init.vim
+
 
 " Move between windows
 " Previous split 
