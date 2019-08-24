@@ -64,14 +64,16 @@ nnoremap tt :tabclose<CR>:tabp<CR>
 nnoremap x "_x
 
 " Move between tabs and splits
-" Previous split 
-map <C-j> <C-w>w
-" Next split
-map <C-k> <C-w>W        
+" Splits
+noremap <C-a> <C-w>h
+noremap <C-s> <C-w>j
+noremap <C-w> <C-w>k        
+noremap <C-d> <C-w>l        
+
 " Next  tab
-noremap <C-l> gt	
+noremap <C-e> gt	
 " Previous tab
-noremap <C-h> gT        
+noremap <C-q> gT        
 
 " buffer commands
 nmap gbl :ls<CR>
