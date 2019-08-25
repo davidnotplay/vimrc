@@ -224,8 +224,8 @@ let g:ctrlsf_auto_focus = {
 	\ "at": "start"
 	\ }
 let g:ctrlsf_mapping = {
-	\ "split": "x",
-	\ "vsplit": "v",
+	\ "split": "m",
+	\ "vsplit": "n",
 	\}
 " emmet
 let g:user_emmet_settings = {
@@ -253,4 +253,7 @@ let g:move_key_modifier = 'A'
 nnoremap <C-p> :Files<CR>
 nnoremap gbf :Buffer<CR>
 nnoremap <C-t> :Windows<CR>
-
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-m': 'split',
+  \ 'ctrl-n': 'vsplit' }
