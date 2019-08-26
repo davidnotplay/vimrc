@@ -147,9 +147,11 @@ let g:tagbar_width=55    " Tagbar width
 " set theme
 set termguicolors
 
-colorscheme gruvbox " Theme name
-let g:gruvbox_contrast_dark='medium'
-set background=dark
+colorscheme nord " Theme name
+" let g:gruvbox_contrast_dark='medium'
+" set background=dark
+hi Normal guibg=NONE ctermbg=NONE " Use terminal background
+
 
 " theme configuration nord
 let g:nord_italic=1
@@ -224,8 +226,8 @@ let g:ctrlsf_auto_focus = {
 	\ "at": "start"
 	\ }
 let g:ctrlsf_mapping = {
-	\ "split": "m",
-	\ "vsplit": "n",
+	\ "split": "o",
+	\ "vsplit": "i",
 	\}
 " emmet
 let g:user_emmet_settings = {
@@ -255,5 +257,5 @@ nnoremap gbf :Buffer<CR>
 nnoremap <C-t> :Windows<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-m': 'split',
-  \ 'ctrl-n': 'vsplit' }
+  \ 'ctrl-o': 'split',
+  \ 'ctrl-i': 'vsplit' }
