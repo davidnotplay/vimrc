@@ -61,6 +61,7 @@ let mapleader = " "
 
 imap jj <Esc>
 nnoremap tt :tabclose<CR>:tabp<CR>
+nnoremap zz :wq!<CR>
 nnoremap x "_x
 
 " Move between tabs and splits
@@ -226,6 +227,7 @@ let g:ctrlsf_auto_focus = {
 	\ "at": "start"
 	\ }
 let g:ctrlsf_mapping = {
+	\ "edit": "enter",
 	\ "split": "o",
 	\ "vsplit": "i",
 	\}
