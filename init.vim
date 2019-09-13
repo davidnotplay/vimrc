@@ -37,6 +37,7 @@ Plug 'junegunn/fzf.vim'		      " Search project files, commits, and buffers easi
 Plug 'airblade/vim-rooter'            " Set the workpace root directory automatically.
 Plug 'craigemery/vim-autotag'         " Refresh automatically the project tag using ctags.
 Plug 'vim-vdebug/vdebug'	      " Debug multilang
+Plug 'fatih/vim-go'
 
 " THEMES
 Plug 'aradunovic/perun.vim'
