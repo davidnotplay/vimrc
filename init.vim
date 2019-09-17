@@ -118,6 +118,7 @@ nmap <Leader>q @
 set hlsearch
 " hide or display the search highlight.
 nnoremap <leader><leader>h :set hlsearch!<CR>
+nnoremap <leader>sh  :History/<CR>
 
 " transform a code line in a comment
 nmap gk gcc
@@ -262,3 +263,7 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-o': 'split',
   \ 'ctrl-i': 'vsplit' }
+
+
+" vim-go
+let g:go_fmt_autosave = 0
