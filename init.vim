@@ -22,7 +22,7 @@ Plug 'mattn/emmet-vim'		      " html snippets.
 Plug 'tpope/vim-surround' 	      " Plugins to add, change and delete languages 'wrappers' easily.
 Plug 'w0rp/ale' 		      " Configurable and multilang linter.
 Plug 'airblade/vim-gitgutter'         " Show the Git changes in the left of the screen.
-Plug 'tpope/vim-commentary'	      " Comment one or more lines easily.
+Plug 'tomtom/tcomment_vim'  	      " Comment one or more lines easily.
 Plug 'majutsushi/tagbar'	      " Show a panel with the tags in file.
 Plug 'ternjs/tern_for_vim'	      " javascript analysis enginer. Necessary for the tagbar in js files.
 Plug 'ryanoasis/vim-devicons'	      " Vim icons.
@@ -38,6 +38,9 @@ Plug 'airblade/vim-rooter'            " Set the workpace root directory automati
 Plug 'craigemery/vim-autotag'         " Refresh automatically the project tag using ctags.
 Plug 'vim-vdebug/vdebug'	      " Debug multilang
 Plug 'fatih/vim-go'
+Plug 'posva/vim-vue'		      " Vue linter plugin
+Plug 'jmcantrell/vim-virtualenv'      " Virtual env 
+Plug 'sheerun/vim-polyglot'
 
 " THEMES
 Plug 'aradunovic/perun.vim'
@@ -119,6 +122,7 @@ set hlsearch
 " hide or display the search highlight.
 nnoremap <leader><leader>h :set hlsearch!<CR>
 nnoremap <leader>sh  :History/<CR>
+vnoremap // y/<C-R>"<CR>
 
 " transform a code line in a comment
 nmap gk gcc
@@ -128,9 +132,9 @@ vmap gk gc
 nmap <Leader>hd :tabedit %<CR>:Gdiff<CR>
 
 " Go the next git change in the file.
-nmap <Leader>hk <Plug>GitGutterPrevHunk
+nmap <Leader>hk <Plug>(GitGutterPrevHunk)
 " Go the previous git change in the file.
-nmap <Leader>hj <Plug>GitGutterNextHunk
+nmap <Leader>hj <Plug>(GitGutterNextHunk)
 " close a window preview
 nmap <leader>hq :pclose<CR>
 
@@ -141,6 +145,7 @@ nnoremap <silent> gt :TagbarToggle<CR>
 let g:tagbar_autofocus=1 "focus in tagbar when it is opened
 let g:tagbar_autoclose=1 " Close tagbar when an element is selected.
 let g:tagbar_width=55    " Tagbar width
+let g:tagbar_sort=0      " no order by name the functions
 
 :set number " set the number lines
 :set numberwidth=4
@@ -197,7 +202,7 @@ let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#tabline#enabled = 1  " show buffer with vim-airline
 let g:airline_section_b = ""		      " hidden the b section in b airline
-let g:airline_section_x = ""		      " hidden the x section in b airline
+" let g:airline_section_x = ""		      " hidden the x section in b airline
 let g:airline_section_y = "" 		      " hidden the y section in b airline
 let g:airline_section_z = "" 		      " hidden the z section in b airline
 
@@ -267,3 +272,13 @@ let g:fzf_action = {
 
 " vim-go
 let g:go_fmt_autosave = 0
+
+" vim vue
+" let g:vue_pre_processors = ['pug', 'scss', 'sass']
+let g:vue_pre_processors = 'detect_on_enter'
+
+
+"virtual env
+let g:virtualenv_directory = '/home/davidnotplay/workspace'
+let g:polyglot_disabled = ['twig', 'typescript', 'vue']
+
