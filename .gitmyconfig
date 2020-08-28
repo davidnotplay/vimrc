@@ -1,0 +1,65 @@
+[core]
+	editor = nvim
+[status]
+	relativePaths=false
+[pager]
+	branch = false # no show the branchs list in page mode
+	stash  = false # no show the stash items list  in page mod mode
+
+[alias]
+
+	st  = status
+	str = -c "status.relativePaths=true" status
+	ds  = checkout --
+	un  = reset HEAD
+
+	# stash
+	su = stash push --include-untracked --keep-index
+	sm = stash push
+	so = stash pop
+	sl = stash list
+	sd = stash drop
+	ss = stash show
+
+	#show 
+	hs = show
+	hr = show --stat
+
+# branch
+	merged-with = branch --merge
+	b          = branch
+	bd         = branch -d
+	bm         = branch --merge
+
+	c          = checkout
+	cn         = checkout -b
+	cm         = checkout master
+
+	# log
+	l  = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log 
+	lc = log --graph  --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+
+	# diff and difftool
+	df = diff
+	dfm = diff master
+	dft = difftool
+	dftm = difftool master
+
+[diff]
+	tool = vimdiff
+	renameLimit = 10000
+
+[difftool]
+	prompt = false
+
+[mergetool]
+	prompt = false
+
+[merge]
+	tool = vimdiff
+	
+
+[difftool "vimdiff"]
+	cmd = nvim -Rd $LOCAL $REMOTE
+
