@@ -11,7 +11,7 @@
 	st  = status
 	str = -c "status.relativePaths=true" status
 	ds  = checkout --
-	un  = reset HEAD
+	un  = reset HEAD --
 
 	# stash
 	su = stash push --include-untracked --keep-index
