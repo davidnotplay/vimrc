@@ -80,7 +80,7 @@ noremap <C-e> gt
 noremap <C-q> gT        
 
 " command to open vim config in new tab.
-command! Vimconfig :tabe /home/davidnotplay/.config/nvim/init.vim
+command! Vimconfig :tabe /home/davidcasado/.config/nvim/init.vim
 
 " buffer
 nmap gbt :ls<CR>:tab sb<Space>
@@ -213,10 +213,10 @@ let g:ale_javascript_eslint_use_global = 0
 nmap ga, gaka;jj
 nmap ga; gaja;jj
 "ale php
-let g:ale_php_phpmd_ruleset = '/var/cbi/framework/phpmd.xml'
+let g:ale_php_phpmd_ruleset = '/home/davidcasado/workspace/framework/phpmd.xml'
 let g:ale_php_phpcs_standard = "PSR2"
 
-nnoremap <leader>cs :!php-cs-fixer fix --config=/var/cbi/framework/.phpcs %:p<CR>
+nnoremap <leader>cs :!php-cs-fixer fix --config=/home/davidcasado/workspace/framework.phpcs %:p<CR>
 
 
 
@@ -345,11 +345,11 @@ let g:fzf_action = {
  \ 'ctrl-i': 'vsplit',}
 
 " python pynvim virtualenv
-let g:python_host_prog = '/home/davidnotplay/nvim/nvimpy2/bin/python'
-let g:python3_host_prog = '/home/davidnotplay/nvim/nvimpy3/bin/python'
+let g:python_host_prog = '/home/davidcasado/nvim/nvimpy2/bin/python'
+let g:python3_host_prog = '/home/davidcasado/nvim/nvimpy3/bin/python'
 
 "virtual env
-let g:virtualenv_directory = '/home/davidnotplay/workspace'
+let g:virtualenv_directory = '/home/davidcasado/workspace'
 
 :set signcolumn="yes:9"
 let g:gitgutter_sign_column_always = 1
